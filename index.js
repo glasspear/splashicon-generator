@@ -19,7 +19,7 @@ var getPlatformIcons = function() {
     platforms.push({
         name: 'ios',
         isAdded: true,
-        iconsPath: 'res/icons/ios/',
+        iconsPath: 'resources/icons/ios/',
         icons: [
             // Default icon (avoid Apple submit error ITMS-90032)
             {
@@ -97,7 +97,7 @@ var getPlatformIcons = function() {
 
     platforms.push({
         name: 'android',
-        iconsPath: 'res/icons/android/',
+        iconsPath: 'resources/icons/android/',
         isAdded: true,
         icons: [{
             name: 'icon-ldpi.png',
@@ -123,7 +123,7 @@ var getPlatformIcons = function() {
     // TODO: hack - this should just done right in Cordova
     platforms.push({
         name: 'blackberry10',
-        iconsPath: 'www/res/icons',
+        iconsPath: 'www/resources/icons',
         isAdded: true,
         icons: [{
             name: 'icon-90.png',
@@ -142,7 +142,7 @@ var getPlatformIcons = function() {
 
     platforms.push({
         name: 'wp8',
-        iconsPath: 'res/icons/wp8/',
+        iconsPath: 'resources/icons/wp8/',
         isAdded: true,
         icons: [{
                 name: 'ApplicationIcon.png',
@@ -171,7 +171,7 @@ var getPlatformSplashs = function() {
     platforms.push({
         name: 'ios',
         isAdded: true,
-        splashPath: 'res/splash/ios/',
+        splashPath: 'resources/splash/ios/',
         splash: [{
                 name: 'Default.png',
                 width: 320,
@@ -227,7 +227,7 @@ var getPlatformSplashs = function() {
     platforms.push({
         name: 'android',
         isAdded: true,
-        splashPath: 'res/splash/android/',
+        splashPath: 'resources/splash/android/',
         splash: [{
             name: 'ldpi.png',
             width: 200,
@@ -267,7 +267,7 @@ var getPlatformSplashs = function() {
     platforms.push({
         name: 'blackberry10',
         isAdded: true,
-        splashPath: 'www/res/splash/',
+        splashPath: 'www/resources/splash/',
         splash: [{
             name: 'splash-768X1280.png',
             width: 768,
@@ -297,7 +297,7 @@ var getPlatformSplashs = function() {
     platforms.push({
         name: 'wp8',
         isAdded: true,
-        splashPath: 'res/splash/wp8/',
+        splashPath: 'resources/splash/wp8/',
         splash: [{
             name: 'SplashScreenImage.jpg',
             width: 480,
@@ -314,8 +314,8 @@ var getPlatformSplashs = function() {
  * TODO: add option to get these values as CLI params
  */
 var settings = {};
-settings.ICON_FILE = 'model/icon.png';
-settings.SPLASH_FILE = 'model/splash.png';
+settings.ICON_FILE = 'resources/icon.png';
+settings.SPLASH_FILE = 'resources/splash.png';
 /**
  * @var {Object} console utils
  */
