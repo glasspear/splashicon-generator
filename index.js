@@ -120,6 +120,26 @@ var getPlatformIcons = function() {
         }]
     });
 
+    // TODO: hack - this should just done right in Cordova
+    platforms.push({
+        name: 'blackberry10',
+        iconsPath: 'www/res/icons',
+        isAdded: true,
+        icons: [{
+            name: 'icon-90.png',
+            size: 90
+        }, {
+            name: 'icon-96.png',
+            size: 96
+        }, {
+            name: 'icon-110.png',
+            size: 110
+        }, {
+            name: 'icon-144.png',
+            size: 144
+        }]
+    });
+
     platforms.push({
         name: 'wp8',
         iconsPath: 'res/icons/wp8/',
@@ -243,6 +263,37 @@ var getPlatformSplashs = function() {
         }]
     });
 
+    // TODO: hack - this should just done right in Cordova
+    platforms.push({
+        name: 'blackberry10',
+        isAdded: true,
+        splashPath: 'www/res/splash/',
+        splash: [{
+            name: 'splash-768X1280.png',
+            width: 768,
+            height: 1280
+        },{
+            name: 'splash-1280X768.png',
+            width: 1280,
+            height: 768
+        },{
+            name: 'splash-1280X720.png',
+            width: 1280,
+            height: 720
+        },{
+            name: 'splash-720X1280.png',
+            width: 720,
+            height: 1280
+        },{
+            name: 'splash-720X720.png',
+            width: 720,
+            height: 720
+        },{
+            name: 'splash-1440X1440.png',
+            width: 1440,
+            height: 1440
+        }]
+    });
     platforms.push({
         name: 'wp8',
         isAdded: true,

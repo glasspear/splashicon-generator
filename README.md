@@ -12,11 +12,11 @@ Consider using the base icon and splash images in the `model` folder, so that im
 
 ### Usage
 
-Create an ```icon.png``` and a ```splash.png``` file in the root folder of your cordova project and run:
+Create an ```model/icon.png``` and a ```model/splash.png``` file in the root folder of your cordova project and run:
 
      $ splashicon-generator
 
-For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 2208x3925px.
+For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 3925x3925px.
 
 ---
 
@@ -36,86 +36,96 @@ On windows see http://www.imagemagick.org/script/binary-releases.php#windows
 
 ---
 
-### Configuring icons
+### Configuring icons && splash screens
 
 Include in your ```config.xml``` file:
 
 ```xml
 <icon src="icon.png" />
 
-<!-- App Store -->
-<icon src="res/icons/ios/icon-1024.png" gap:platform="ios" width="1024" height="1024" />
+<platform name="android">
+    <icon src="res/icons/android/icon-ldpi.png" density="ldpi" />
+    <icon src="res/icons/android/icon-mdpi.png" density="mdpi" />
+    <icon src="res/icons/android/icon-hdpi.png" density="hdpi" />
+    <icon src="res/icons/android/icon-xhdpi.png" density="xhdpi" />
+    <icon src="res/icons/android/icon-xxhdpi.png" density="xxhdpi" />
+    <icon src="res/icons/android/icon-xxxhdpi.png" density="xxxhdpi" />
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="res/splash/android/landscape-hdpi.png" density="land-hdpi"/>
+    <splash src="res/splash/android/landscape-ldpi.png" density="land-ldpi"/>
+    <splash src="res/splash/android/landscape-mdpi.png" density="land-mdpi"/>
+    <splash src="res/splash/android/landscape-xhdpi.png" density="land-xhdpi"/>
+    <splash src="res/splash/android/hdpi.png" density="port-hdpi"/>
+    <splash src="res/splash/android/ldpi.png" density="port-ldpi"/>
+    <splash src="res/splash/android/mdpi.png" density="port-mdpi"/>
+    <splash src="res/splash/android/xhdpi.png" density="port-xhdpi"/>
+</platform>
 
-<!-- iOS 8.0+ -->
-<!-- iPhone 6 Plus  -->
-<icon src="res/icons/ios/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
-<!-- iOS 7.0+ -->
-<!-- iPhone / iPod Touch  -->
-<icon src="res/icons/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
-<icon src="res/icons/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
-<!-- iPad -->
-<icon src="res/icons/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
-<icon src="res/icons/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
-<!-- iOS 6.1 -->
-<!-- Spotlight Icon -->
-<icon src="res/icons/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
-<icon src="res/icons/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
-<!-- iPhone / iPod Touch -->
-<icon src="res/icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
-<icon src="res/icons/ios/icon@2x.png" gap:platform="ios" width="114" height="114" />
-<!-- iPad -->
-<icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
-<icon src="res/icons/ios/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
-<!-- iPhone Spotlight and Settings Icon -->
-<icon src="res/icons/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
-<icon src="res/icons/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
-<!-- iPad Spotlight and Settings Icon -->
-<icon src="res/icons/ios/icon-50.png" gap:platform="ios" width="50" height="50" />
-<icon src="res/icons/ios/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+<platform name="blackberry10">
+    <icon src="res/icons/icon-90.png" />
+    <icon src="res/icons/icon-96.png" />
+    <icon src="res/icons/icon-110.png" />
+    <icon src="res/icons/icon-144.png" />
+    <!-- Add a rim:splash element for each resolution and locale you wish -->
+    <!-- http://developer.blackberry.com/html5/documentation/rim_splash_element.html -->
+    <rim:splash src="res/splash/splash-1280X720.png"/>
+    <rim:splash src="res/splash/splash-720X1280.png"/>
+    <rim:splash src="res/splash/splash-1280X768.png"/>
+    <rim:splash src="res/splash/splash-768X1280.png"/>
+    <rim:splash src="res/splash/splash-720X720.png"/>
+    <rim:splash src="res/splash/splash-1440X1440.png"/>
 
+</platform>
 
+<platform name="ios">
+    <!-- iOS 8.0+ -->
+    <!-- iPhone 6 Plus  -->
+    <icon src="res/icons/ios/icon-60@3x.png" width="180" height="180" />
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="res/icons/ios/icon-60.png" width="60" height="60" />
+    <icon src="res/icons/ios/icon-60@2x.png" width="120" height="120" />
+    <!-- iPad -->
+    <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
+    <icon src="res/icons/ios/icon-76@2x.png" width="152" height="152" />
+    <!-- iOS 6.1 -->
+    <!-- Spotlight Icon -->
+    <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
+    <icon src="res/icons/ios/icon-40@2x.png" width="80" height="80" />
+    <!-- iPhone / iPod Touch -->
+    <icon src="res/icons/ios/icon.png" width="57" height="57" />
+    <icon src="res/icons/ios/icon@2x.png" width="114" height="114" />
+    <!-- iPad -->
+    <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
+    <icon src="res/icons/ios/icon-72@2x.png" width="144" height="144" />
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+    <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
+    <icon src="res/icons/ios/icon-50@2x.png" width="100" height="100" />
+    <!-- App Store -->
+    <icon src="res/icons/ios/icon-1024.png" width="1024" height="1024" />
+    <!-- images are determined by width and height. The following are supported -->
+    <splash src="res/splash/ios/Default-568h@2x.png" width="640" height="1136"/>
+    <splash src="res/splash/ios/Default-667h@2x.png" width="750" height="1334"/>
+    <splash src="res/splash/ios/Default-Landscape-736h@3x.png" width="2208" height="1242"/>
+    <splash src="res/splash/ios/Default-Landscape.png" width="1024" height="768"/>
+    <splash src="res/splash/ios/Default-Landscape@2x.png" width="2048" height="1536"/>
+    <splash src="res/splash/ios/Default-Portrait-736h@3x.png" width="1242" height="2208"/>
+    <splash src="res/splash/ios/Default-Portrait.png" width="768" height="1024"/>
+    <splash src="res/splash/ios/Default-Portrait@2x.png" width="1536" height="2048"/>
+    <splash src="res/splash/ios/Default.png" width="320" height="480"/>
+    <splash src="res/splash/ios/Default@2x.png" width="640" height="960"/>
+</platform>
 
-<icon src="res/icons/android/icon-ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
-<icon src="res/icons/android/icon-mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-<icon src="res/icons/android/icon-hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-<icon src="res/icons/android/icon-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
-<icon src="res/icons/android/icon-xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
-<icon src="res/icons/android/icon-xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi" />
-
-<icon src="res/icons/wp8/ApplicationIcon.png" gap:platform="winphone" />
-<icon src="res/icons/wp8/Background.png" gap:platform="winphone" gap:role="background" />
-```
-
----
-
-### Configuring splash
-
-Include in your ```config.xml``` file:
-
-```xml
-<gap:splash src="splash.png" />
-
-<gap:splash src="res/splash/ios/Default.png" gap:platform="ios" width="320" height="480" />
-<gap:splash src="res/splash/ios/Default@2x.png" gap:platform="ios" width="640" height="960" />
-<gap:splash src="res/splash/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
-<gap:splash src="res/splash/ios/Default-667h@2x.png" gap:platform="ios" width="750" height="1334" />
-<gap:splash src="res/splash/ios/Default-Portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
-<gap:splash src="res/splash/ios/Default-Landscape-736h@3x.png" gap:platform="ios" width="2208" height="1242" />
-<gap:splash src="res/splash/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
-<gap:splash src="res/splash/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
-<gap:splash src="res/splash/ios/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
-<gap:splash src="res/splash/ios/Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
-
-<gap:splash src="res/splash/android/ldpi.png" gap:platform="android" />
-<gap:splash src="res/splash/android/landscape-ldpi.png" gap:platform="android" gap:qualifier="land-ldpi" />
-<gap:splash src="res/splash/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-<gap:splash src="res/splash/android/landscape-mdpi.png" gap:platform="android" gap:qualifier="land-mdpi" />
-<gap:splash src="res/splash/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-<gap:splash src="res/splash/android/landscape-hdpi.png" gap:platform="android" gap:qualifier="land-hdpi" />
-<gap:splash src="res/splash/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
-<gap:splash src="res/splash/android/landscape-xhdpi.png" gap:platform="android" gap:qualifier="land-xhdpi" />
-
-<gap:splash src="res/splash/wp8/SplashScreenImage.jpg" gap:platform="winphone" />
+<platform name="wp8">
+    <icon src="res/icons/wp8/ApplicationIcon.png" width="99" height="99" />
+    <!-- tile image -->
+    <icon src="res/icons/wp8/Background.png" width="159" height="159" />
+    <!-- images are determined by width and height. The following are supported -->
+    <splash src="res/splash/wp8/SplashScreenImage.jpg" width="768" height="1280"/>
+</platform>
 ```
 
 ---
