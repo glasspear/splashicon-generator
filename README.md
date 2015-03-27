@@ -1,6 +1,9 @@
 # splashicon-generator
 
-Automatic icon and splash screen resizing for PhoneGap. Create an icon in the root folder of your PhoneGap project and use ```resources/icon.png``` and a ```resources/splash.png``` to automatically resize and copy it for all the platforms your project supports (currently works with iOS, Android, BlackBerry 10 and Windows Phone 8).
+Automatic icon and splash screen resizing for Cordova. Create an icon in the root folder of your 
+Cordova project and use ```resources/icon.png``` and a ```resources/splash.png``` to automatically 
+resize and copy it for all the platforms your project supports (currently works with iOS, Android, 
+BlackBerry 10 and Windows Phone 8).
 
 ### Installation
 
@@ -10,11 +13,18 @@ Automatic icon and splash screen resizing for PhoneGap. Create an icon in the ro
 
 ### Usage
 
-Create an ```resources/icon.png``` and a ```resources/splash.png``` file in the root folder of your cordova project and run:
+Create an ```resources/icon.png``` and a ```resources/splash.png``` file in the root folder of your 
+cordova project and run:
 
      $ splashicon-generator
 
-For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 2208x2208px.
+The icon should be 1024 X 1024px and should have no rounded corners. Each platform will apply its 
+own mask and effects to the icons.
+
+The splash screen dimensions vary for each platform, device, and orientation, so a square source 
+image is required to generate each of the various screen sizes. The source imageshould be at least 
+2208 X 2208px, and the artwork should be centered within the square, each generated image will be 
+center cropped into landscape and portrait images. 
 
 ---
 
@@ -22,7 +32,9 @@ For optimal results, your icon file has to be square, and at least 1024x1024px a
 
 #### ImageMagick
 
-Install on a Mac:
+##### Install 
+
+On Mac:
 
      $ brew install imagemagick
 
@@ -30,7 +42,24 @@ On linux:
 
     $ sudo apt-get install imagemagick
 
-On windows see http://www.imagemagick.org/script/binary-releases.php#windows
+On windows:
+
+see http://www.imagemagick.org/script/binary-releases.php#windows
+
+
+#### GhostScript
+
+If you would like to resize AI/PSD files directly you also need to install GhostScript.
+
+##### Install 
+
+On Mac:
+     
+     $ brew install ghostscript
+
+On Windows/Linux:
+
+see http://www.ghostscript.com/download/gsdnld.html
 
 ---
 
