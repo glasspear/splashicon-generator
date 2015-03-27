@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var xml2js = require('xml2js');
-var ig = require('imagemagick');
+var gm = require('gm');
 var colors = require('colors');
 var _ = require('underscore');
 var Q = require('q');
@@ -349,21 +349,31 @@ var generateIcon = function(platform, icon) {
         if (!fs.existsSync(filedirName)) {
             nodeFs.mkdirSync(filedirName, '0777', true);
         }
-        ig.resize({
-            srcPath: settings.ICON_FILE,
-            dstPath: filePath,
-            quality: 1,
-            format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
-            width: icon.size,
-            height: icon.size,
-        }, function(err, stdout, stderr) {
-            if (err) {
-                deferred.reject(err);
-            } else {
-                deferred.resolve();
-                display.success(icon.name + ' created');
-            }
-        });
+        gm(settings.ICON_FILE)
+            .resize(icon.size, icon.size)
+            .write(filePath, function(err) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve();
+                    display.success(icon.name + ' created');
+                }
+            });
+        // ig.resize({
+        //     srcPath: settings.ICON_FILE,
+        //     dstPath: filePath,
+        //     quality: 1,
+        //     format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+        //     width: icon.size,
+        //     height: icon.size,
+        // }, function(err, stdout, stderr) {
+        //     if (err) {
+        //         deferred.reject(err);
+        //     } else {
+        //         deferred.resolve();
+        //         display.success(icon.name + ' created');
+        //     }
+        // });
     } catch (error) {
         deferred.reject(err);
     }
@@ -452,21 +462,33 @@ var generateSplash = function(platform, splash) {
         if (!fs.existsSync(filedirName)) {
             nodeFs.mkdirSync(filedirName, '0777', true);
         }
-        ig.crop({
-            srcPath: settings.SPLASH_FILE,
-            dstPath: filePath,
-            quality: 1,
-            format: splash.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
-            width: splash.width,
-            height: splash.height,
-        }, function(err, stdout, stderr) {
-            if (err) {
-                deferred.reject(err);
-            } else {
-                deferred.resolve();
-                display.success(splash.name + ' created');
-            }
-        });
+        gm(settings.SPLASH_FILE)
+            .resize(icon.size, icon.size)
+            .gravity('center')
+            .crop(width, height, (max-width)/2, (max-height)/2)
+            .write(filePath, function(err) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve();
+                    display.success(splash.name + ' created');
+                }
+            });
+        // ig.crop({
+        //     srcPath: settings.SPLASH_FILE,
+        //     dstPath: filePath,
+        //     quality: 1,
+        //     format: splash.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+        //     width: splash.width,
+        //     height: splash.height,
+        // }, function(err, stdout, stderr) {
+        //     if (err) {
+        //         deferred.reject(err);
+        //     } else {
+        //         deferred.resolve();
+        //         display.success(splash.name + ' created');
+        //     }
+        // });
     } catch (error) {
         deferred.reject(err);
     }
