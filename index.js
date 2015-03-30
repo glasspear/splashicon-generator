@@ -181,7 +181,8 @@ var settings = {
     DEFAULT_FOLDER: 'resources/',
     FILE_EXT: ['.ai','.png'],
     ICON_FILENAME: 'icon',
-    SPLASH_FILENAME: 'splash'
+    SPLASH_FILENAME: 'splash',
+    DEST_FILE_EXT: '.png'
 };
 
 /**
@@ -218,7 +219,7 @@ var generateIcon = function(platform, icon) {
             nodeFs.mkdirSync(filedirName, '0777', true);
         }
         ig.resize({
-            srcPath: settings.DEFAULT_FOLDER + settings.ICON_FILENAME + settings.FILE_EXT[2],
+            srcPath: settings.DEFAULT_FOLDER + settings.ICON_FILENAME + settings.DEST_FILE_EXT,
             dstPath: filePath,
             quality: 1,
             format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
@@ -368,7 +369,7 @@ var generateSplash = function(platform, splash) {
             nodeFs.mkdirSync(filedirName, '0777', true);
         }
         ig.crop({
-            srcPath: settings.DEFAULT_FOLDER + settings.SPLASH_FILENAME + settings.FILE_EXT[2],
+            srcPath: settings.DEFAULT_FOLDER + settings.SPLASH_FILENAME + settings.DEST_FILE_EXT,
             dstPath: filePath,
             quality: 1,
             format: splash.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
