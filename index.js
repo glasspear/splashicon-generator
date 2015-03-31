@@ -18,7 +18,7 @@ var getPlatformIcons = function() {
     var platforms = [];
     platforms.push({
         name: 'ios',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/ios'),
         iconsPath: 'resources/icons/ios/',
         icons: [
             // Default icon (avoid Apple submit error ITMS-90032)
@@ -54,7 +54,7 @@ var getPlatformIcons = function() {
     platforms.push({
         name: 'android',
         iconsPath: 'resources/icons/android/',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/android'),
         icons: [
             { name: 'icon-ldpi.png', size: 36 },
             { name: 'icon-mdpi.png', size: 48 },
@@ -69,7 +69,7 @@ var getPlatformIcons = function() {
     platforms.push({
         name: 'blackberry10',
         iconsPath: 'www/resources/icons',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/blackberry10'),
         icons: [
             { name: 'icon-90.png', size: 90 },
             { name: 'icon-96.png', size: 96 },
@@ -81,7 +81,7 @@ var getPlatformIcons = function() {
     platforms.push({
         name: 'wp8',
         iconsPath: 'resources/icons/wp8/',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/wp8'),
         icons: [
             // Icon
             { name: 'ApplicationIcon.png', size: 99 },
@@ -105,7 +105,7 @@ var getPlatformSplashs = function() {
     var platforms = [];
     platforms.push({
         name: 'ios',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/ios'),
         splashPath: 'resources/splash/ios/',
         splash: [
             // iPhone
@@ -132,7 +132,7 @@ var getPlatformSplashs = function() {
     });
     platforms.push({
         name: 'android',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/android'),
         splashPath: 'resources/splash/android/',
         splash: [
             { name: 'ldpi.png', width: 200, height: 320},
@@ -149,7 +149,7 @@ var getPlatformSplashs = function() {
     // TODO: hack - this should just done right in Cordova
     platforms.push({
         name: 'blackberry10',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/blackberry10'),
         splashPath: 'www/resources/splash/',
         splash: [
             { name: 'splash-768X1280.png', width: 768, height: 1280 },
@@ -162,7 +162,7 @@ var getPlatformSplashs = function() {
     });
     platforms.push({
         name: 'wp8',
-        isAdded: true,
+        isAdded: fs.existsSync('platforms/wp8'),
         splashPath: 'resources/splash/wp8/',
         splash: [
             { name: 'SplashScreenImage.jpg', width: 480, height: 800}
