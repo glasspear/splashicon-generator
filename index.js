@@ -157,7 +157,9 @@ var getPlatformSplashs = function() {
             { name: 'splash-1280X720.png', width: 1280, height: 720 },
             { name: 'splash-720X1280.png', width: 720, height: 1280 },
             { name: 'splash-720X720.png', width: 720, height: 720},
-            { name: 'splash-1440X1440.png', width: 1440, height: 1440}
+            { name: 'splash-1440X1440.png', width: 1440, height: 1440},
+            { name: 'app-480x480.png', width: 480, height: 480},
+            { name: 'app-1920x1186.png', width: 1920, height: 1186}
         ]
     });
     platforms.push({
