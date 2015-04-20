@@ -142,7 +142,12 @@ var getPlatformSplashs = function() {
             { name: 'hdpi.png', width: 480, height: 800 },
             { name: 'landscape-hdpi.png', width: 800, height: 480 },
             { name: 'xhdpi.png', width: 720, height: 1280 },
-            { name: 'landscape-xhdpi.png', width: 1280, height: 720 }
+            { name: 'landscape-xhdpi.png', width: 1280, height: 720 },
+            { name: 'app-hi-res.png', width: 512, height: 512 },
+            { name: 'app-feature.png', width: 1024, height: 500 },
+            { name: 'app-promo.png', width: 180, height: 120 },
+            { name: 'app-tv-banner.png', width: 320, height: 180 },
+
         ]
     });
 
